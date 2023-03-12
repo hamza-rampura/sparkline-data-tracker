@@ -3,21 +3,37 @@
 }
  */
 let form_data;
-const main_submit = document.querySelector("#index_submit");
-main_submit.addEventListener("click", (e) => {
+console.log("hello");
+const index_submit = document.querySelector("#index_submit");
+const last_submit = document?.querySelector("#last_submit");
+index_submit.addEventListener("click", (e) => {
     console.log(e);
     e.preventDefault();
     let formEl = document.forms.my_form;
     let formData = new FormData(formEl);
-    console.log("hello");
     for (const value of formData.values()) {
         console.log(value);
     }
-    const selectBox = document.querySelector('input[name="Options"]:checked');
-    const selectedValue = selectBox.value;
-    console.log(window.location.href, window.location.origin);
+    const selectedValue = document.querySelector(
+        'input[name="Options"]:checked'
+    ).value;
     window.location.href =
         window.location.origin + `/processes/${selectedValue}.html`;
+});
+
+last_submit.addEventListener("click", (e) => {
+    console.log(e);
+    e.preventDefault();
+    let formEl = document.forms.last_form;
+    let formData = new FormData(formEl);
+    for (const pair of formData.entries()) {
+        console.log(`${pair[0]}, ${pair[1]}`);
+    }
+    /* const selectedValue = document.querySelector(
+        'input[name="Options"]:checked'
+    ).value;
+    window.location.href =
+        window.location.origin + `/processes/${selectedValue}.html`; */
 });
 
 function submitJob() {

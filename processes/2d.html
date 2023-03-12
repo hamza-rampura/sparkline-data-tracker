@@ -11,7 +11,7 @@
             <header>
                 <h1>SPARKLINE</h1>
             </header>
-            <form id="my-form">
+            <form id="last_form">
                 <h2>2D</h2>
                 <h3>Select Details:</h3>
                 <div>
@@ -54,18 +54,23 @@
                     <input
                         type="radio"
                         id="option5"
-                        name="Start"
+                        name="status"
                         value="Start"
                     />
 
                     <label for="option6"> Stop:</label>
-                    <input type="radio" id="option6" name="Stop" value="Stop" />
+                    <input
+                        type="radio"
+                        id="option6"
+                        name="status"
+                        value="Stop"
+                    />
 
                     <label for="option6"> Finish:</label>
                     <input
                         type="radio"
                         id="option7"
-                        name="Finish"
+                        name="status"
                         value="Finish"
                     />
                 </div>
@@ -98,7 +103,7 @@
                     <option value="R14">Other</option>
                 </select>
                 <br /><br />
-                <button type="submit" onclick="submitJob()">Submit</button>
+                <button id="last_submit" type="submit">Next</button>
             </form>
         </div>
     </body>
