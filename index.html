@@ -8,6 +8,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/v-switch-case@1.0.2/dist/v-switch.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
     <div id="app">
@@ -37,8 +38,13 @@
             </select>
             <br><br><br>
             <!-- All all page values here small_case -->
+            <input type="radio" v-model="showComp" value="tunnel" >Tunnel
+            <input type="radio" v-model="showComp" value="operator" >Operator
             <input type="radio" v-model="showComp" value="l_angle" >L Angle
             <input type="radio" v-model="showComp" value="panel" >Panel
+            <input type="radio" v-model="showComp" value="2d" >2D
+            <input type="radio" v-model="showComp" value="3d" >3D
+            <input type="radio" v-model="showComp" value="finish_weld" >Finish Weld
         </div>
 
         <!-- create all subcomponents for all html pages here, add all input fields without form tags below the h1 tags -->
@@ -51,6 +57,22 @@
         <div v-if="comps.panel">
             <h1>
                 Panel
+            </h1>
+        </div>
+        <div v-if="comps.2d">
+            <h1>
+                2D
+            </h1>
+        </div>
+
+        <div v-if="comps.3d">
+            <h1>
+                3D
+            </h1>
+        </div>
+        <div v-if="comps.finish_weld">
+            <h1>
+                Finish Weld
             </h1>
         </div>
     </div>
