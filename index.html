@@ -15,10 +15,9 @@
         <div v-if="is_main">
             <label for="Project Code"> Project Code: </label>
             <select name="project-code" id="Project Code" v-model="payload.project_code">
-                <option value="NA"> </option>
-                <option value="Code1">Code1</option>
-                <option value="Code2">Code2</option>
-                <option value="Code3">Code3</option>
+               <option v-for="(item, index) in codes" :key="index">
+                {{ item }}
+                </option>
             </select>
             <br><br><br>
             <label for="tunnel"> Tunnel</label>
@@ -62,7 +61,9 @@ createApp({
     data() {
         return {
             message: "Hello Vue!",
+            codes: ["code1", "code2", "code3"],
             users: ["burhan", "hamza", "spark", "line"],
+            reasons: [""],
             payload: {
                 project_code: null,
                 tunnel: null,
