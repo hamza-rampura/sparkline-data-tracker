@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sparkline Data Input</title>
+        <script src="../js/main.js"></script>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body>
+        <div class="page-content">
+            <header>
+                <h1>SPARKLINE</h1>
+            </header>
+            <form id="last_submit">
+                <h2>Finish Weld</h2>
+                <h3>Select Details:</h3>
+                <div>
+                    <label for="option5"> Start:</label>
+                    <input
+                        type="radio"
+                        id="option5"
+                        name="Start"
+                        value="Start"
+                    />
+
+                    <label for="option6"> Stop:</label>
+                    <input type="radio" id="option6" name="Stop" value="Stop" />
+
+                    <label for="option6"> Finish:</label>
+                    <input
+                        type="radio"
+                        id="option7"
+                        name="Finish"
+                        value="Finish"
+                    />
+                </div>
+                <br />
+                <label for="Shift"> Shift: </label>
+                <select id="Shift">
+                    <option value="NA"></option>
+                    <option value="Shift 1">Shift 1</option>
+                    <option value="Shift 2">Shift 2</option>
+                    <option value="Overtime 1">Overtime 1</option>
+                    <option value="Overtime 2">Overtime 2</option>
+                </select>
+                <br /><br />
+                <label for="Reason"> Reason for Stop: </label>
+                <select id="Reason">
+                    <option value="NA"></option>
+                    <option value="R1">Water</option>
+                    <option value="R2">Tiolet</option>
+                    <option value="R3">Tea Time</option>
+                    <option value="R4">Lunch Time</option>
+                    <option value="R5">Shift Over</option>
+                    <option value="R6">Setup Time</option>
+                    <option value="R4">Material Movement</option>
+                    <option value="R8">Consumable Loading</option>
+                    <option value="R9">Job Handling Time</option>
+                    <option value="R10">Machine Breakdown</option>
+                    <option value="R11">Material Not Available</option>
+                    <option value="R12">Manpower Not Available</option>
+                    <option value="R13">Kaizen</option>
+                    <option value="R14">Other</option>
+                </select>
+                <br /><br />
+                <button type="submit">Sumbit</button>
+            </form>
+        </div>
+    </body>
+</html>

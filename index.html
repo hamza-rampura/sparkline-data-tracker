@@ -8,7 +8,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/v-switch-case@1.0.2/dist/v-switch.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <div id="app">
@@ -23,26 +23,23 @@
             <br><br><br>
             <label for="tunnel"> Tunnel</label>
             <select name="tunnel" id="Project Code" v-model="payload.tunnel">
-                <option value="NA"> </option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
+                <option v-for="(item, index) in tunnels" :key="index">
+                {{ item }}
+            </option>
             </select>
             <br><br></br>
             <label for="Operator"> Operator Name: </label>
             <select name= "employee" id="Operator" v-model="payload.employee">
             <option v-for="(item, index) in users" :key="index">
                 {{ item }}
-                </option>
+            </option>
             </select>
             <br><br><br>
             <!-- All all page values here small_case -->
-            <input type="radio" v-model="showComp" value="tunnel" >Tunnel
-            <input type="radio" v-model="showComp" value="operator" >Operator
             <input type="radio" v-model="showComp" value="l_angle" >L Angle
             <input type="radio" v-model="showComp" value="panel" >Panel
-            <input type="radio" v-model="showComp" value="2d" >2D
-            <input type="radio" v-model="showComp" value="3d" >3D
+            <input type="radio" v-model="showComp" value="two_d" >2D
+            <input type="radio" v-model="showComp" value="three_d" >3D
             <input type="radio" v-model="showComp" value="finish_weld" >Finish Weld
         </div>
 
@@ -58,22 +55,24 @@
                 Panel
             </h1>
         </div>
-        <div v-if="comps.2d">
+        <div v-if="comps.two_d">
             <h1>
                 2D
             </h1>
         </div>
 
-        <div v-if="comps.3d">
+        <div v-if="comps.three_d">
             <h1>
                 3D
             </h1>
+
         </div>
         <div v-if="comps.finish_weld">
             <h1>
                 Finish Weld
             </h1>
         </div>
+        <div>Add submit button here.</div>
     </div>
 </body>
 <script>
@@ -84,6 +83,7 @@ createApp({
         return {
             message: "Hello Vue!",
             codes: ["code1", "code2", "code3"],
+            tunnels: ["tunnels1", "tunnels2", "tunnels3"],
             users: ["burhan", "hamza", "spark", "line"],
             reasons: [""],
             payload: {
@@ -93,8 +93,11 @@ createApp({
             },
             is_main: true,
             comps: {
-               l_angle: false,
+                l_angle: false,
                 panel: false, 
+                two_d: false, 
+                three_d: false, 
+                finish_weld: false,
             },
             showComp1: null,
         };
@@ -128,9 +131,20 @@ createApp({
                 case "l_angle":
                     this.comps[value] = true;
                     this.setAllFalse(value);
-                    
                     break;
                 case "panel":
+                    this.comps[value] = true;
+                    this.setAllFalse(value);
+                    break;
+                case "two_d":
+                    this.comps[value] = true;
+                    this.setAllFalse(value);
+                    break;
+                    case "three_d":
+                    this.comps[value] = true;
+                    this.setAllFalse(value);
+                    break;
+                    case "finish_weld":
                     this.comps[value] = true;
                     this.setAllFalse(value);
                     break;
