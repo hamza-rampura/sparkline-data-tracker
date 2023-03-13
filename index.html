@@ -182,7 +182,7 @@
             </select>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit" @click="submit">Submit</button>
         </div>
     </div>
 </body>
@@ -225,7 +225,6 @@ createApp({
     computed: {
         showComp: {
             get() {
-                console.log(this.showComp1)
                 return this.showComp1;
             },
             set(val) {
@@ -234,8 +233,8 @@ createApp({
         }
     },
     methods: {
-        showComp() {
-            console.log(this.showComp1);
+        submit() {
+            console.log(this.payload);
         },
         setAllFalse(comp_name) {
             for (const key in this.comps) {
@@ -247,31 +246,9 @@ createApp({
     },
     watch: {
         showComp1(value) {
-            switch (value) {
-                case "l_angle":
-                    this.comps[value] = true;
-                    this.setAllFalse(value);
-                    break;
-                case "panel":
-                    this.comps[value] = true;
-                    this.setAllFalse(value);
-                    break;
-                case "two_d":
-                    this.comps[value] = true;
-                    this.setAllFalse(value);
-                    break;
-                case "three_d":
-                    this.comps[value] = true;
-                    this.setAllFalse(value);
-                    break;
-                case "finish_weld":
-                    this.comps[value] = true;
-                    this.setAllFalse(value);
-                    break;
-                default:
-
-                break;
-            }
+            this.payload.process = value;
+            this.comps[value] = true;
+            this.setAllFalse(value);
         }
     }
 }).mount("#app");
