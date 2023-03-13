@@ -14,8 +14,8 @@
     <div id="app">
 
         <div v-if="is_main">
-            <label for="Project Code"> Project Code: </label>
-            <select name="project-code" id="Project Code" v-model="payload.project_code">
+            <label for="project_code"> Project Code: </label>
+            <select name="project_code" id="project_code" v-model="payload.project_code">
                <option v-for="(item, index) in codes" :key="index">
                 {{ item }}
                 </option>
@@ -48,31 +48,142 @@
             <h1>
                 L Angle
             </h1>
+            <div>
+                <input type="radio" v-model="payload.side" value="lh" >LH
+                <input type="radio" v-model="payload.side" value="rh" >RH
+            </div>
+            <div>
+                <input type="radio" v-model="payload.direction" value="up" >UP
+                <input type="radio" v-model="payload.direction" value="down" >DOWN
+            </div>
+            <div>
+                <input type="radio" v-model="payload.status" value="start" >Start
+                <input type="radio" v-model="payload.status" value="stop" >Stop
+                <input type="radio" v-model="payload.status" value="finish" >Finish
+            </div> 
+            <label for="shift"> Shift: </label>
+            <select name="shift" id="shift" v-model="payload.shift">
+               <option v-for="(item, index) in shift" :key="index">
+                {{ item }}
+                </option>
+            </select>
+            <label for="reason_to_stop"> Reason to Stop: </label>
+            <select name="reason_to_stop" id="reason_to_stop" v-model="payload.reason_to_stop">
+               <option v-for="(item, index) in reason_to_stop" :key="index">
+                {{ item }}
+                </option>
+            </select>
         </div>
 
         <div v-if="comps.panel">
             <h1>
                 Panel
             </h1>
+            <div>
+                <input type="radio" v-model="payload.panel_type" value="roof" >Roof
+                <input type="radio" v-model="payload.panel_type" value="floor" >Floor
+                <input type="radio" v-model="payload.panel_type" value="wall_panel" >Wall Panel
+            </div>
+            <div>
+                <input type="radio" v-model="payload.side" value="lh" >LH
+                <input type="radio" v-model="payload.side" value="rh" >RH
+            </div>
+            <div>
+                <input type="radio" v-model="payload.status" value="start" >Start
+                <input type="radio" v-model="payload.status" value="stop" >Stop
+                <input type="radio" v-model="payload.status" value="finish" >Finish
+            </div> 
+            <label for="shift"> Shift: </label>
+            <select name="shift" id="shift" v-model="payload.shift">
+               <option v-for="(item, index) in shift" :key="index">
+                {{ item }}
+                </option>
+            </select>
+            <label for="reason_to_stop"> Reason to Stop: </label>
+            <select name="reason_to_stop" id="reason_to_stop" v-model="payload.reason_to_stop">
+               <option v-for="(item, index) in reason_to_stop" :key="index">
+                {{ item }}
+                </option>
+            </select>
         </div>
         <div v-if="comps.two_d">
             <h1>
                 2D
             </h1>
+            <div>
+                <input type="radio" v-model="payload.inex" value="in" >Interior
+                <input type="radio" v-model="payload.inex" value="ex" >Exterior
+            </div>
+            <div>
+                <input type="radio" v-model="payload.side" value="lh" >LH
+                <input type="radio" v-model="payload.side" value="rh" >RH
+            </div>
+            <div>
+                <input type="radio" v-model="payload.status" value="start" >Start
+                <input type="radio" v-model="payload.status" value="stop" >Stop
+                <input type="radio" v-model="payload.status" value="finish" >Finish
+            </div> 
+            <label for="shift"> Shift: </label>
+            <select name="shift" id="shift" v-model="payload.shift">
+               <option v-for="(item, index) in shift" :key="index">
+                {{ item }}
+                </option>
+            </select>
+            <label for="reason_to_stop"> Reason to Stop: </label>
+            <select name="reason_to_stop" id="reason_to_stop" v-model="payload.reason_to_stop">
+               <option v-for="(item, index) in reason_to_stop" :key="index">
+                {{ item }}
+                </option>
+            </select>
         </div>
 
         <div v-if="comps.three_d">
             <h1>
                 3D
             </h1>
-
+            <div>
+                <input type="radio" v-model="payload.status" value="start" >Start
+                <input type="radio" v-model="payload.status" value="stop" >Stop
+                <input type="radio" v-model="payload.status" value="finish" >Finish
+            </div> 
+            <label for="shift"> Shift: </label>
+            <select name="shift" id="shift" v-model="payload.shift">
+               <option v-for="(item, index) in shift" :key="index">
+                {{ item }}
+                </option>
+            </select>
+            <label for="reason_to_stop"> Reason to Stop: </label>
+            <select name="reason_to_stop" id="reason_to_stop" v-model="payload.reason_to_stop">
+               <option v-for="(item, index) in reason_to_stop" :key="index">
+                {{ item }}
+                </option>
+            </select>
         </div>
         <div v-if="comps.finish_weld">
             <h1>
                 Finish Weld
             </h1>
+            <div>
+                <input type="radio" v-model="payload.status" value="start" >Start
+                <input type="radio" v-model="payload.status" value="stop" >Stop
+                <input type="radio" v-model="payload.status" value="finish" >Finish
+            </div> 
+            <label for="shift"> Shift: </label>
+            <select name="shift" id="shift" v-model="payload.shift">
+               <option v-for="(item, index) in shift" :key="index">
+                {{ item }}
+                </option>
+            </select>
+            <label for="reason_to_stop"> Reason to Stop: </label>
+            <select name="reason_to_stop" id="reason_to_stop" v-model="payload.reason_to_stop">
+               <option v-for="(item, index) in reason_to_stop" :key="index">
+                {{ item }}
+                </option>
+            </select>
         </div>
-        <div>Add submit button here.</div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </div>
 </body>
 <script>
@@ -83,13 +194,22 @@ createApp({
         return {
             message: "Hello Vue!",
             codes: ["code1", "code2", "code3"],
-            tunnels: ["tunnels1", "tunnels2", "tunnels3"],
-            users: ["burhan", "hamza", "spark", "line"],
-            reasons: [""],
+            tunnels: ["A", "B", "C"],
+            shift: ["Shift 1","Shift 2","Overtime 1","Overtime 2"],
+            users: ["Guddu Sahani","Pramod Gupta","Rahul Kumar","Irfan Ali","Rajesh Pal","Satish Kumar","Rakesh Bharti","Arman Khan","Balwant Yadav","Rajkumar Sharma","Satyendra Yadav","Mahendra Yadav","Dhruv Raj"],
+            reason_to_stop: ["Water","Toilet","Tea Time","Lunch Time","Shift Over","Setup Time","Material Not Available","Material Movement","Consumable Loading","Handling Time","Machine Breakdown","Manpower Not Available","Kaizen","Other"],
             payload: {
                 project_code: null,
                 tunnel: null,
-                employe: null,
+                employee: null,
+                process: null,
+                direction: null,
+                panel_type: null,
+                inex: null,
+                side: null,
+                status: null,
+                shift: null,
+                reason_to_stop: null,
             },
             is_main: true,
             comps: {
@@ -140,11 +260,11 @@ createApp({
                     this.comps[value] = true;
                     this.setAllFalse(value);
                     break;
-                    case "three_d":
+                case "three_d":
                     this.comps[value] = true;
                     this.setAllFalse(value);
                     break;
-                    case "finish_weld":
+                case "finish_weld":
                     this.comps[value] = true;
                     this.setAllFalse(value);
                     break;
