@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <form onsubmit="return submitForm()">
+    <form>
     <div id="app">
 
         <div v-if="is_main">
@@ -46,18 +46,18 @@
                 L Angle
             </h1>
             <div>
-                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="up" >UP
-                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="down" >DOWN
+                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="UP" >UP
+                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="DOWN" >DOWN
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="lh" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="rh" >RH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="finish" >Finish
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
             <select name="entry.612273678" id="shift" v-model="payload.shift">
@@ -78,18 +78,18 @@
                 Panel
             </h1>
             <div>
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="roof" >Roof
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="floor" >Floor
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="wall_panel" >Wall Panel
+                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Roof" >Roof
+                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Floor" >Floor
+                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Wall Panel" >Wall Panel
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="lh" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="rh" >RH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="finish" >Finish
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
             <select name="entry.612273678" id="shift" v-model="payload.shift">
@@ -109,17 +109,17 @@
                 2D
             </h1>
             <div>
-                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="in" >Interior
-                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="ex" >Exterior
+                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="Interior" >Interior
+                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="Exterior" >Exterior
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="lh" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="rh" >RH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="finish" >Finish
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
             <select name="entry.612273678" id="shift" v-model="payload.shift">
@@ -179,11 +179,11 @@
                 </option>
             </select>
         </div>
-        <div>
-            <button type="submit">Submit</button>
-        </div>
     </div>
     </form>
+    <div>
+        <button onclick="submitForm()">Submit</button>
+    </div>
 </body>
 <script>
 const { createApp } = Vue;
@@ -346,9 +346,10 @@ let previousValues = {};
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeNBvOB1CXOI5zZ6NwJYUSOQlkhLAPJfLTF2J5HgVgPpPei0w/formResponse", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-        xhttp.setRequestHeader("Access-Control-Allow-Methods", "*");
-        xhttp.withCredentials = true;
+        //xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+        // xhttp.setRequestHeader("Access-Control-Allow-Methods", "*");
+        // xhttp.setRequestHeader("Access-Control-Max-Age","86400");
+        // xhttp.withCredentials = true;
         
         xhttp.send("entry.299251446=" + 
                     encodeURIComponent(document.getElementById("project_code").value) +
@@ -356,12 +357,12 @@ let previousValues = {};
                     encodeURIComponent(document.getElementById("tunnel").value) +
                     "&entry.1696030283=" + 
                     encodeURIComponent(document.getElementById("operator").value) + 
-                    //process + 
-                    // direction + 
-                    // panel_type + 
-                    // inex + 
-                    // side + 
-                    // status + 
+                    process + 
+                    direction + 
+                    panel_type + 
+                    inex + 
+                    side + 
+                    status + 
                     "&entry.612273678=" + 
                     encodeURIComponent(document.getElementById("shift").value) + 
                     "&entry.800910469=" + 
