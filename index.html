@@ -7,37 +7,37 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <form>
+    <!-- <form id="my-form"> -->
     <div id="app">
 
         <div v-if="is_main">
             <label for="project_code"> Project Code: </label>
-            <select name="entry.299251446" id="project_code" v-model="payload.project_code">
+            <select name="entry.1078477103" id="project_code" v-model="payload.project_code">
                <option v-for="(item, index) in codes" :key="index">
                 {{ item }}
                 </option>
             </select>
             <br><br><br>
             <label for="tunnel"> Tunnel</label>
-            <select name="entry.1315980058" id="tunnel" v-model="payload.tunnel">
+            <select name="entry.1213033535" id="tunnel" v-model="payload.tunnel">
                 <option v-for="(item, index) in tunnels" :key="index">
                 {{ item }}
             </option>
             </select>
             <br><br></br>
             <label for="Operator"> Operator Name: </label>
-            <select name= "entry.1696030283" id="operator" v-model="payload.employee">
+            <select name= "entry.2031717987" id="operator" v-model="payload.employee">
             <option v-for="(item, index) in users" :key="index">
                 {{ item }}
             </option>
             </select>
             <br><br><br>
             <!-- All all page values here small_case -->
-            <input name= "entry.1241298706" type="radio" v-model="showComp" value="l_angle" >L Angle
-            <input name= "entry.1241298706" type="radio" v-model="showComp" value="panel" >Panel
-            <input name= "entry.1241298706" type="radio" v-model="showComp" value="two_d" >2D
-            <input name= "entry.1241298706" type="radio" v-model="showComp" value="three_d" >3D
-            <input name= "entry.1241298706" type="radio" v-model="showComp" value="finish_weld" >Finish Weld
+            <input name= "entry.492632194" type="radio" v-model="showComp" value="l_angle" >L Angle
+            <input name= "entry.492632194" type="radio" v-model="showComp" value="panel" >Panel
+            <input name= "entry.492632194" type="radio" v-model="showComp" value="two_d" >2D
+            <input name= "entry.492632194" type="radio" v-model="showComp" value="three_d" >3D
+            <input name= "entry.492632194" type="radio" v-model="showComp" value="finish_weld" >Finish Weld
         </div>
 
         <!-- create all subcomponents for all html pages here, add all input fields without form tags below the h1 tags -->
@@ -46,27 +46,27 @@
                 L Angle
             </h1>
             <div>
-                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="UP" >UP
-                <input name= "entry.1697431590" type="radio" v-model="payload.direction" value="DOWN" >DOWN
+                <input name= "entry.2037443837" type="radio" v-model="payload.direction" value="UP" >UP
+                <input name= "entry.2037443837" type="radio" v-model="payload.direction" value="DOWN" >DOWN
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
-            <select name="entry.612273678" id="shift" v-model="payload.shift">
+            <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
             <label for="reason_to_stop"> Reason to Stop: </label>
-            <select name="entry.800910469" id="reason_to_stop" v-model="payload.reason_to_stop">
+            <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
                 </option>
@@ -78,27 +78,27 @@
                 Panel
             </h1>
             <div>
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Roof" >Roof
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Floor" >Floor
-                <input name= "entry.386276378" type="radio" v-model="payload.panel_type" value="Wall Panel" >Wall Panel
+                <input name= "entry.2008913860" type="radio" v-model="payload.panel_type" value="Roof" >Roof
+                <input name= "entry.2008913860" type="radio" v-model="payload.panel_type" value="Floor" >Floor
+                <input name= "entry.2008913860" type="radio" v-model="payload.panel_type" value="Wall Panel" >Wall Panel
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
-            <select name="entry.612273678" id="shift" v-model="payload.shift">
+            <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
             <label for="reason_to_stop"> Reason to Stop: </label>
-            <select name="entry.800910469" id="reason_to_stop" v-model="payload.reason_to_stop">
+            <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
                 </option>
@@ -109,26 +109,26 @@
                 2D
             </h1>
             <div>
-                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="Interior" >Interior
-                <input name= "entry.934204651" type="radio" v-model="payload.inex" value="Exterior" >Exterior
+                <input name= "entry.831304656" type="radio" v-model="payload.inex" value="Interior" >Interior
+                <input name= "entry.831304656" type="radio" v-model="payload.inex" value="Exterior" >Exterior
             </div>
             <div>
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="LH" >LH
-                <input name= "entry.1878686560" type="radio" v-model="payload.side" value="RH" >RH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="LH" >LH
+                <input name= "entry.1814352900" type="radio" v-model="payload.side" value="RH" >RH
             </div>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="Finish" >Finish
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
-            <select name="entry.612273678" id="shift" v-model="payload.shift">
+            <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
             <label for="reason_to_stop"> Reason to Stop: </label>
-            <select name="entry.800910469" id="reason_to_stop" v-model="payload.reason_to_stop">
+            <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
                 </option>
@@ -140,18 +140,18 @@
                 3D
             </h1>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="finish" >Finish
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
-            <select name="entry.612273678" id="shift" v-model="payload.shift">
+            <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
             <label for="reason_to_stop"> Reason to Stop: </label>
-            <select name="entry.800910469" id="reason_to_stop" v-model="payload.reason_to_stop">
+            <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
                 </option>
@@ -162,28 +162,30 @@
                 Finish Weld
             </h1>
             <div>
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="start" >Start
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="stop" >Stop
-                <input name= "entry.1549897946" type="radio" v-model="payload.status" value="finish" >Finish
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
+                <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
             <label for="shift"> Shift: </label>
-            <select name="entry.612273678" id="shift" v-model="payload.shift">
+            <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
             <label for="reason_to_stop"> Reason to Stop: </label>
-            <select name="entry.800910469" id="reason_to_stop" v-model="payload.reason_to_stop">
+            <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
                 </option>
             </select>
         </div>
+        <div>
+            <button onclick=" return submitForm()">Submit</button>
+            
+        </div>
     </div>
-    </form>
-    <div>
-        <button onclick="submitForm()">Submit</button>
-    </div>
+    <!-- </form> -->
+    
 </body>
 <script>
 const { createApp } = Vue;
@@ -255,10 +257,8 @@ createApp({
 let previousValues = {};
     function submitForm() 
     {
-        
-
         const codeInput = document.getElementById('project_code');
-        const optionInput = document.querySelector('input[name="entry.1549897946"]:checked');
+        const optionInput = document.querySelector('input[name="entry.1596100045"]:checked');
         
         const previouscodes = previousValues['code'] || [];
         const previouscodeoptions = previousValues['code-option'] || {};
@@ -266,8 +266,8 @@ let previousValues = {};
 
         if (previousoptions.length > 0 && previousoptions[previousoptions.length - 1] === 'Stop' && optionInput.value === 'Finish') 
         {
-          alert('Project Code under STOP. Please START first!!');
-          return;
+            alert('Project Code under STOP. Please START first!!');
+           return;
         }
         
         previouscodes.push(codeInput.value);
@@ -275,7 +275,7 @@ let previousValues = {};
         
         if (!previouscodeoptions[codeInput.value]) 
         {
-          previouscodeoptions[codeInput.value] = [];
+            previouscodeoptions[codeInput.value] = [];
         }
         
         previouscodeoptions[codeInput.value].push(optionInput.value);
@@ -285,7 +285,7 @@ let previousValues = {};
 
 
         var process,direction,side,panel_type,inex,status;
-        process=document.querySelector('input[name="entry.1241298706"]:checked');
+        process=document.querySelector('input[name="entry.492632194"]:checked');
         if (process) 
         {
             process = process.value;
@@ -294,7 +294,7 @@ let previousValues = {};
         {
             process='NA';
         }
-        direction=document.querySelector('input[name="entry.1697431590"]:checked');
+        direction=document.querySelector('input[name="entry.2037443837"]:checked');
         if (direction) 
         {
             direction = direction.value;
@@ -303,7 +303,7 @@ let previousValues = {};
         {
             direction='NA';
         }
-        side=document.querySelector('input[name="entry.1878686560"]:checked');
+        side=document.querySelector('input[name="entry.1814352900"]:checked');
         if (side) 
         {
             side = side.value;
@@ -312,7 +312,7 @@ let previousValues = {};
         {
             side='NA';
         }
-        panel_type=document.querySelector('input[name="entry.386276378"]:checked');
+        panel_type=document.querySelector('input[name="entry.2008913860"]:checked');
         if (panel_type) 
         {
             panel_type = panel.value;
@@ -321,7 +321,7 @@ let previousValues = {};
         {
             panel_type='NA';
         }
-        inex=document.querySelector('input[name="entry.934204651"]:checked');
+        inex=document.querySelector('input[name="entry.831304656"]:checked');
         if (inex) 
         {
             inex = inex.value;
@@ -330,7 +330,7 @@ let previousValues = {};
         {
             inex='NA';
         }
-        status=document.querySelector('input[name="entry.1549897946"]:checked');
+        status=document.querySelector('input[name="entry.1596100045"]:checked');
         if (status) 
         {
             status = status.value;
@@ -346,28 +346,33 @@ let previousValues = {};
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "https://docs.google.com/forms/d/e/1FAIpQLSeNBvOB1CXOI5zZ6NwJYUSOQlkhLAPJfLTF2J5HgVgPpPei0w/formResponse", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        //xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-        // xhttp.setRequestHeader("Access-Control-Allow-Methods", "*");
+        // xhttp.setRequestHeader("Access-Control-Allow-Origin", "http://localhost");
+        // xhttp.setRequestHeader("Access-Control-Allow-Methods", "POST");
         // xhttp.setRequestHeader("Access-Control-Max-Age","86400");
         // xhttp.withCredentials = true;
         
-        xhttp.send("entry.299251446=" + 
+        xhttp.send( "entry.1078477103=" + 
                     encodeURIComponent(document.getElementById("project_code").value) +
-                    "&entry.1315980058=" + 
+                    "&entry.1213033535=" + 
                     encodeURIComponent(document.getElementById("tunnel").value) +
-                    "&entry.1696030283=" + 
+                    "&entry.2031717987=" + 
                     encodeURIComponent(document.getElementById("operator").value) + 
-                    // process + 
-                    // direction + 
-                    // panel_type + 
-                    // inex + 
-                    // side + 
-                    // status + 
-                    "&entry.612273678=" + 
+                    "&entry.492632194=" +
+                    encodeURIComponent(process) +
+                    "&entry.2037443837=" +
+                    encodeURIComponent(direction) +
+                    "&entry.2008913860=" +
+                    encodeURIComponent(panel_type) +
+                    "&entry.831304656=" +
+                    encodeURIComponent(inex) +
+                    "&entry.1814352900=" +
+                    encodeURIComponent(side) +
+                    "&entry.1596100045=" +
+                    encodeURIComponent(status) + 
+                    "&entry.1428035848=" + 
                     encodeURIComponent(document.getElementById("shift").value) + 
-                    "&entry.800910469=" + 
+                    "&entry.1540913178=" + 
                     encodeURIComponent(document.getElementById("reason_to_stop").value));
-        
 
         alert("Form Submitted!!");
     }
