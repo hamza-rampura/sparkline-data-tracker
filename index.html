@@ -1,15 +1,17 @@
 <html>
 <head>
     <title>Document</title>
-
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/v-switch-case@1.0.2/dist/v-switch.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <!-- <form id="my-form"> -->
-    <div id="app">
-
+    <div id="app" class="page-content">
+        <header>
+            <h1>SPARKLINE</h1>
+        </header>
         <div v-if="is_main">
             <label for="project_code"> Project Code: </label>
             <select name="entry.1078477103" id="project_code" v-model="payload.project_code">
@@ -18,7 +20,7 @@
                 </option>
             </select>
             <br><br><br>
-            <label for="tunnel"> Tunnel</label>
+            <label for="tunnel"> Tunnel: </label>
             <select name="entry.1213033535" id="tunnel" v-model="payload.tunnel">
                 <option v-for="(item, index) in tunnels" :key="index">
                 {{ item }}
@@ -38,6 +40,7 @@
             <input name= "entry.492632194" type="radio" v-model="showComp" value="two_d" >2D
             <input name= "entry.492632194" type="radio" v-model="showComp" value="three_d" >3D
             <input name= "entry.492632194" type="radio" v-model="showComp" value="finish_weld" >Finish Weld
+            <br><br>
         </div>
 
         <!-- create all subcomponents for all html pages here, add all input fields without form tags below the h1 tags -->
@@ -45,27 +48,30 @@
             <h1>
                 L Angle
             </h1>
+            <br><br>
             <div>
                 <input name= "entry.2037443837" type="radio" v-model="payload.direction" value="UP" >UP
                 <input name= "entry.2037443837" type="radio" v-model="payload.direction" value="DOWN" >DOWN
             </div>
+            <br><br>
             <div>
                 <input name= "entry.1814352900" type="radio" v-model="payload.side" value="LH" >LH
                 <input name= "entry.1814352900" type="radio" v-model="payload.side" value="RH" >RH
             </div>
-            
+            <br><br>
             <div>
                 <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Start" >Start
                 <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Stop" >Stop
                 <input name= "entry.1596100045" type="radio" v-model="payload.status" value="Finish" >Finish
             </div> 
-            <label for="shift"> Shift: </label>
+            <br><br>
+            <label for="shift">Shift: </label>
             <select name="entry.1428035848" id="shift" v-model="payload.shift">
                <option v-for="(item, index) in shift" :key="index">
                 {{ item }}
                 </option>
             </select>
-            <label for="reason_to_stop"> Reason to Stop: </label>
+            <label for="reason_to_stop">Reason to Stop: </label>
             <select name="entry.1540913178" id="reason_to_stop" v-model="payload.reason_to_stop">
                <option v-for="(item, index) in reason_to_stop" :key="index">
                 {{ item }}
